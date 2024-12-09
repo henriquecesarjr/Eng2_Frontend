@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto de Eventos</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="./assets/css/events.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navegacao">
+            <div class="container-fluid">
+                <!-- Logotipo -->
+                <a class="navbar-brand" href="#"><span>Your</span> Events</a>
+                
+                <!-- Botão hambúrguer -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu de navegação">
+                    <span class="navbar-toggler-icon" aria-hidden="true"></span>
+                </button>
+                
+                <!-- Links do menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#events">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#participants">Participantes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./organizers.html">Organizadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#dashboard">Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mt-4" id="events">
+            <h2 class="mb-4 text-center">Marque seus eventos</h2>
+            <button class="btn btn-success mb-3 btn-add" data-bs-toggle="modal" data-bs-target="#eventModal">Adicionar Evento</button>
+            <table class="table table-bordered table-striped">
+                <thead class="table-primary">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Organizador</th>
+                        <th>Data</th>
+                        <th>Local</th>
+                        <th>Descrição</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados serão carregados aqui dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Adicionar Evento</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="eventForm">
+                            <div class="mb-3">
+                                <label for="eventName" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="eventName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="organizerName" class="form-label">Organizador</label>
+                                <input type="text" class="form-control" id="eventName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventDate" class="form-label">Data</label>
+                                <input type="date" class="form-control" id="eventDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventLocation" class="form-label">Local</label>
+                                <input type="text" class="form-control" id="eventLocation" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventDescription" class="form-label">Descrição</label>
+                                <textarea class="form-control" id="eventDescription" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-white text-center py-1">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Your Events. Todos os direitos reservados.</p>
+            <p>
+                <a href="#" class="text-white text-decoration-none">Política de Privacidade</a> | 
+                <a href="#" class="text-white text-decoration-none">Termos de Serviço</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+   <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

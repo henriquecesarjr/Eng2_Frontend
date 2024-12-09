@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Organizadores</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="./assets/css/events.css">
+</head>
+<body>
+    <header>
+        <nav class=" navbar navbar-expand-lg navbar-dark navegacao">
+            <div class="container-fluid">
+                <!-- Logotipo -->
+                <a class="navbar-brand" href="#"><span>Your</span> events</a>
+
+                <!-- Botão hambúrguer -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu de navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links do menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="#participants">Participantes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mt-4" id="organizers">
+            <h2 class="mb-4 text-center">Organizadores</h2>
+            <button class="btn btn-success mb-3 btn-add" data-bs-toggle="modal" data-bs-target="#organizerModal">Adicionar Organizador</button>
+            <table class="table table-bordered table-striped">
+                <thead class="table-primary">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Organização</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Os dados dos organizadores serão carregados dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal para Adicionar/Editar Organizador -->
+        <div class="modal fade" id="organizerModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Adicionar Organizador</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="organizerForm">
+                            <div class="mb-3">
+                                <label for="organizerId" class="form-label">ID</label>
+                                <input type="text" class="form-control" id="organizerId" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="organizerName" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="organizerName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="organizerEmail" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="organizerEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="organizerPhone" class="form-label">Telefone</label>
+                                <input type="text" class="form-control" id="organizerPhone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="organizerOrg" class="form-label">Organização</label>
+                                <input type="text" class="form-control" id="organizerOrg" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="text-white text-center py-1">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Your Events. Todos os direitos reservados.</p>
+            <p>
+                <a href="#" class="text-white text-decoration-none">Política de Privacidade</a> | 
+                <a href="#" class="text-white text-decoration-none">Termos de Serviço</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap js-->
+    <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

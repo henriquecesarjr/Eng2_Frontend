@@ -1,0 +1,55 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.navegacao{
+    background-color: rgb(31, 160, 177);
+}
+body{
+    background-color: beige;
+}
+.nav-link{
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+}
+span{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+.btn-add{
+    background-color: rgb(11, 100, 216);
+    border: none;
+
+}
+.btn-add:hover{
+  background-color: blue;
+}
+h2{
+    color: grey;
+}
+
+html, body {
+    height: 100%;
+    margin: 0; /* Remove margens extras do corpo */
+}
+
+/* Usando Flexbox para colocar o footer no fim da página */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Garante que o conteúdo principal ocupe todo o espaço disponível */
+main {
+    flex: 1;
+}
+
+footer{
+    background-color: rgb(31, 160, 177);
+}
+p{
+    padding: 5px;
+}
+
