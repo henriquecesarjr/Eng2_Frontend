@@ -25,13 +25,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#events">Eventos</a>
+                            <a class="nav-link" href="./participants.html">Participantes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#participants">Participantes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./organizers.html">Organizadores</a>
+                            <a class="nav-link" href="./organizer.html">Organizadores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#dashboard">Dashboard</a>
@@ -45,13 +42,13 @@
     <main>
         <div class="container mt-4" id="events">
             <h2 class="mb-4 text-center">Marque seus eventos</h2>
-            <button class="btn btn-success mb-3 btn-add" data-bs-toggle="modal" data-bs-target="#eventModal">Adicionar Evento</button>
+            <button class="btn btn-primary mb-3 btn-add" data-bs-toggle="modal" data-bs-target="#eventModal">Adicionar Evento</button>
             <table class="table table-bordered table-striped">
                 <thead class="table-primary">
                     <tr>
                         <th>ID</th>
+                        <th>OrganizadorId</th>
                         <th>Nome</th>
-                        <th>Organizador</th>
                         <th>Data</th>
                         <th>Local</th>
                         <th>Descrição</th>
@@ -79,8 +76,8 @@
                                 <input type="text" class="form-control" id="eventName" required>
                             </div>
                             <div class="mb-3">
-                                <label for="organizerName" class="form-label">Organizador</label>
-                                <input type="text" class="form-control" id="eventName" required>
+                                <label for="organizerId" class="form-label">Organizador</label>
+                                <input type="number" class="form-control" id="eventName" required>
                             </div>
                             <div class="mb-3">
                                 <label for="eventDate" class="form-label">Data</label>
@@ -115,6 +112,6 @@
 
     <!-- Bootstrap JS -->
    <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/event.js"></script>
 </body>
 </html>

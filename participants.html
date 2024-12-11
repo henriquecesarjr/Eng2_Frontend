@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto de Eventos</title>
+    <title>Projeto de eventos</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="./assets/css/events.css">
+
 </head>
 <body>
     <header>
@@ -25,10 +26,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#events">Eventos</a>
+                            <a class="nav-link" href="./events.html">Eventos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./participants.html">Participantes</a>
+                            <a class="nav-link" href="./organizers.html">Organizadores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#dashboard">Dashboard</a>
@@ -40,17 +41,17 @@
     </header>
 
     <main>
-        <div class="container mt-4" id="box-organizer">
-            <h2 class="mb-4 text-center">Organizadores</h2>
-            <button class="btn btn-primary mb-3 btn-add" data-bs-toggle="modal" data-bs-target="#eventModal">Adicionar organizador</button>
+        <div class="container mt-4" id="participants">
+            <h2 class="mb-4 text-center">Participantes</h2>
+            <button class="btn btn-primary mb-3 btn-add" data-bs-toggle="modal" data-bs-target="#eventModal">Adicionar participante</button>
             <table class="table table-bordered table-striped">
                 <thead class="table-primary">
                     <tr>
                         <th>ID</th>
+                        <th>eventId</th>
                         <th>Nome</th>
                         <th>Email</th>
                         <th>Telefone</th>
-                        <th>Organização</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -69,26 +70,25 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="organizerForm">
+                        <form id="participantForm">
                             <div class="mb-3">
-                                <label for="eventName" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="organizerName" required>
+                                <label for="name" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="pName" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="organizerEmail" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="tel" class="form-label">Telefone</label>
-                                <input type="tel" class="form-control" id="tel" required>
+                                <input type="email" class="form-control" id="email" required>
                             </div>
                             <div class="mb-3">
-                                <label for="organizacao" class="form-label">Organização</label>
-                                <input type="text" class="form-control" id="organizacao" required>
+                                <label for="telefone" class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" id="phone" required>
                             </div>
-                          
-                          
+                            
+                            <div class="mb-3">
+                                <label for="evento" class="form-label">EventoId</label>
+                                <input type="number" class="form-control" id="eventoId" required>
+                            </div>
+                            
                             <button type="submit" class="btn btn-primary">Salvar</button>
                         </form>
                     </div>
@@ -110,6 +110,7 @@
 
     <!-- Bootstrap JS -->
    <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/event.js"></script>
+    <script src="./assets/js/participant.js"></script>
+
 </body>
 </html>
