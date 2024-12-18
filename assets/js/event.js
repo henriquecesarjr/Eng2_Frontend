@@ -33,7 +33,7 @@ async function fetchEvents(pagina = 0, tamanhoPagina = 5) {
                 <td>${event.id}</td>
                 <td>${event.organizerId}</td>
                 <td>${event.date}</td>
-                <td>${event.location}</td>
+                <td>${event.local}</td>
                 <td>${event.description}</td>
                 <td>
                     <button class="btn btn-warning btn-sm"
@@ -81,15 +81,15 @@ async function addEvent(event) {
     const organizer = document.getElementById("organizerId").value;
     const name = document.getElementById("eventName").value;
     const date = document.getElementById("eventDate").value;
-    const location = document.getElementById("eventLocation").value;
+    const local = document.getElementById("eventLocal").value;
     const description = document.getElementById("eventDescription").value;
 
-    if(!organizer || !name || !date || !location || !description){
+    if(!organizer || !name || !date || !local || !description){
       alert('Todos os campos devem ser preenchidos')
       return;
     }
 
-    const newEvent = { organizer, name, date, location, description };
+    const newEvent = { organizer, name, date, local, description };
 
     try {
         const response = await fetch(API_URL + '/save', {
@@ -123,7 +123,7 @@ async function editEvent(id) {
         // Preenche os campos do formulário
         document.getElementById("editEventName").value = event.name;
         document.getElementById("editEventDate").value = event.date;
-        document.getElementById("editEventLocation").value = event.location;
+        document.getElementById("editEventLocal").value = event.local;
         document.getElementById("editEventDescription").value = event.description;
 
         // Atualiza o título do modal para "Editar Evento"
@@ -142,7 +142,7 @@ async function editEvent(id) {
             const updatedEvent = {
                 name: document.getElementById("editEventName").value,
                 date: document.getElementById("editEventDate").value,
-                location: document.getElementById("editEventLocation").value,
+                local: document.getElementById("editEventlocal").value,
                 description: document.getElementById("editEventDescription").value,
             };
 
