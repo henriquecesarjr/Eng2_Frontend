@@ -78,18 +78,18 @@ function atualizarPaginacao(data) {
 async function addEvent(event) {
     event.preventDefault(); // Evita o recarregamento da página
     
-    const organizer = document.getElementById("organizerId").value;
+    const organizerId = document.getElementById("organizerId").value;
     const name = document.getElementById("eventName").value;
     const date = document.getElementById("eventDate").value;
     const local = document.getElementById("eventLocal").value;
     const description = document.getElementById("eventDescription").value;
 
-    if(!organizer || !name || !date || !local || !description){
+    if(!organizerId || !name || !date || !local || !description){
       alert('Todos os campos devem ser preenchidos')
       return;
     }
 
-    const newEvent = { organizer, name, date, local, description };
+    const newEvent = { organizerId, name, date, local, description };
 
     try {
         const response = await fetch(API_URL + '/save', {
