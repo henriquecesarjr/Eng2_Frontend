@@ -25,7 +25,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="./participants.html">Participantes</a>
+                            <a class="nav-link" href="./participants.html">Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./organizer.html">Organizadores</a>
@@ -55,13 +55,13 @@
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="table-body">
                     <!-- Dados serão carregados aqui dinamicamente -->
                 </tbody>
             </table>
         </div>
 
-        <!-- Modal -->
+        <!-- Modal para adicionar eventos -->
         <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -72,13 +72,14 @@
                     <div class="modal-body">
                         <form id="eventForm">
                             <div class="mb-3">
+                                <label for="organizer" class="form-label">Organizador</label>
+                                <input type="number" class="form-control" id="organizerId" required>
+                            </div>
+                            <div class="mb-3">
                                 <label for="eventName" class="form-label">Nome</label>
                                 <input type="text" class="form-control" id="eventName" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="organizerId" class="form-label">Organizador</label>
-                                <input type="number" class="form-control" id="eventName" required>
-                            </div>
+                            
                             <div class="mb-3">
                                 <label for="eventDate" class="form-label">Data</label>
                                 <input type="date" class="form-control" id="eventDate" required>
@@ -90,6 +91,38 @@
                             <div class="mb-3">
                                 <label for="eventDescription" class="form-label">Descrição</label>
                                 <textarea class="form-control" id="eventDescription" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal para edicao de eventos-->
+        <div class="modal fade" id="editEventModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Adicionar Evento</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editEventForm">
+                            <div class="mb-3">
+                                <label for="eventName" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="editEventName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventDate" class="form-label">Data</label>
+                                <input type="date" class="form-control" id="editEventDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventLocation" class="form-label">Local</label>
+                                <input type="text" class="form-control" id="editEventLocation" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventDescription" class="form-label">Descrição</label>
+                                <textarea class="form-control" id="editEventDescription" rows="3" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Salvar</button>
                         </form>

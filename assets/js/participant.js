@@ -74,7 +74,7 @@ function atualizarPaginacao(data) {
     }
 }
 
-// Função para adicionar organizador
+// Função para adicionar participante
 async function addParticipant(event) {
     event.preventDefault(); // Evita o recarregamento da página
 
@@ -107,7 +107,7 @@ async function addParticipant(event) {
 // Função para editar organizador
 async function editParticipant(id) {
     try {
-        // Busca os dados do organizador
+        // Busca os dados do participante
         const response = await fetch(`${API_URL}/${id}`);
         if (!response.ok) {
             throw new Error(`Erro ao buscar participante: ${response.statusText}`);
