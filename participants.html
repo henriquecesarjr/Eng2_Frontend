@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto de eventos</title>
+    <title>Projeto de Eventos</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="./assets/css/events.css">
-
 </head>
 <body>
     <header>
@@ -26,10 +25,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="./events.html">Eventos</a>
+                            <a class="nav-link" href="#events">Eventos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./organizers.html">Organizadores</a>
+                            <a class="nav-link" href="./organizer.html">Organizadores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#dashboard">Dashboard</a>
@@ -41,54 +40,86 @@
     </header>
 
     <main>
-        <div class="container mt-4" id="participants">
+        <div class="container mt-4" id="box-participant">
             <h2 class="mb-4 text-center">Participantes</h2>
             <button class="btn btn-primary mb-3 btn-add" data-bs-toggle="modal" data-bs-target="#eventModal">Adicionar participante</button>
-            <table class="table table-bordered table-striped">
-                <thead class="table-primary">
-                    <tr>
-                        <th>ID</th>
-                        <th>eventId</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Telefone</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Dados serão carregados aqui dinamicamente -->
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Dados serão carregados aqui dinamicamente -->
+                    </tbody>
+                </table>
+                <div id="pagination-controls" class="d-flex justify-content-center mt-3"></div>
+
+            </div>
+           
         </div>
 
-        <!-- Modal -->
+        <!-- Modal para adicionar participante -->
         <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Adicionar Evento</h5>
+                        <h5 class="modal-title">Adicionar Participante</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                     </div>
                     <div class="modal-body">
                         <form id="participantForm">
                             <div class="mb-3">
-                                <label for="name" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="pName" required>
+                                <label for="participant" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="participantName" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control" id="participantEmail" required>
                             </div>
+
                             <div class="mb-3">
-                                <label for="telefone" class="form-label">Telefone</label>
-                                <input type="tel" class="form-control" id="phone" required>
+                                <label for="phone" class="form-label">Telefone</label>
+                                <input type="text" class="form-control" id="participantPhone" required>
                             </div>
                             
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Modal para edicao -->
+         <div class="modal fade" id="editParticipantModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Adicionar Participante</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editParticipantForm">
                             <div class="mb-3">
-                                <label for="evento" class="form-label">EventoId</label>
-                                <input type="number" class="form-control" id="eventoId" required>
+                                <label for="participant" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="participantNameEdit" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="participantEmailEdit" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="tel" class="form-label">Telefone</label>
+                                <input type="text" class="form-control" id="participantTelEdit" required>
                             </div>
                             
+                          
                             <button type="submit" class="btn btn-primary">Salvar</button>
                         </form>
                     </div>
@@ -111,6 +142,5 @@
     <!-- Bootstrap JS -->
    <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/participant.js"></script>
-
 </body>
 </html>

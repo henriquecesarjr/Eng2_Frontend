@@ -25,7 +25,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#events">Eventos</a>
+                            <a class="nav-link" href="./events.html">Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./participants.html">Participantes</a>
@@ -43,24 +43,29 @@
         <div class="container mt-4" id="box-organizer">
             <h2 class="mb-4 text-center">Organizadores</h2>
             <button class="btn btn-primary mb-3 btn-add" data-bs-toggle="modal" data-bs-target="#eventModal">Adicionar organizador</button>
-            <table class="table table-bordered table-striped">
-                <thead class="table-primary">
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Telefone</th>
-                        <th>Organização</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Dados serão carregados aqui dinamicamente -->
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Organização</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Dados serão carregados aqui dinamicamente -->
+                    </tbody>
+                </table>
+                <div id="pagination-controls" class="d-flex justify-content-center mt-3"></div>
+
+            </div>
+           
         </div>
 
-        <!-- Modal -->
+        <!-- Modal para adicionar usuario -->
         <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -71,7 +76,7 @@
                     <div class="modal-body">
                         <form id="organizerForm">
                             <div class="mb-3">
-                                <label for="eventName" class="form-label">Nome</label>
+                                <label for="organizer" class="form-label">Nome</label>
                                 <input type="text" class="form-control" id="organizerName" required>
                             </div>
                             <div class="mb-3">
@@ -81,11 +86,47 @@
 
                             <div class="mb-3">
                                 <label for="tel" class="form-label">Telefone</label>
-                                <input type="tel" class="form-control" id="tel" required>
+                                <input type="text" class="form-control" id="tel" required>
                             </div>
                             <div class="mb-3">
                                 <label for="organizacao" class="form-label">Organização</label>
                                 <input type="text" class="form-control" id="organizacao" required>
+                            </div>
+                          
+                          
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Modal para edicao -->
+         <div class="modal fade" id="editOrganizerModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Adicionar Evento</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editOrganizerForm">
+                            <div class="mb-3">
+                                <label for="organizer" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="organizerNameEdit" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="organizerEmailEdit" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="tel" class="form-label">Telefone</label>
+                                <input type="text" class="form-control" id="telEdit" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="organizacao" class="form-label">Organização</label>
+                                <input type="text" class="form-control" id="organizacaoEdit" required>
                             </div>
                           
                           
@@ -110,6 +151,6 @@
 
     <!-- Bootstrap JS -->
    <script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/event.js"></script>
+    <script src="./assets/js/organizer.js"></script>
 </body>
 </html>

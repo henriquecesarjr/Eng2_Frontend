@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const location = document.querySelector('#eventLocation').value;
       const description = document.querySelector('#eventDescription').value;
   
-      console.log(name, organizer, date, location, description);
-  
       // Validação básica
       if (!name || !organizer || !date || !location || !description) {
         alert('Todos os campos devem ser preenchidos!');
@@ -29,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         descricao: description,
         organizador: organizer
       };
+      console.log(eventData);
   
       try {
         // Envia os dados para o back-end

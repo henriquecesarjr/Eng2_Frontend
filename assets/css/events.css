@@ -26,6 +26,12 @@ span{
 .btn-add:hover{
   background-color: blue;
 }
+.btn-warning{
+    background-color: rgb(236, 236, 114) !important;
+}
+.btn-warning:hover{
+    background-color: rgb(221, 221, 61) !important;
+}
 h2{
     color: grey;
 }
